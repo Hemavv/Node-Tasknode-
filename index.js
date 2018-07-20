@@ -3,6 +3,8 @@ const bp=require('body-parser');
 const mongoose=require('mongoose');
 const config=require('./config/database');
 const path=require('path');
+const passport=require('passport');
+const bcrypt=require('bcryptjs');
 
 //Set instance for express
 const app=express();
@@ -18,6 +20,9 @@ console.log('Error in connection');
 
 const addr=require('./routes/addr');
 app.use('/addr',addr);
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport);
 
 app.get('/',(req,res)=>{
     res.send('Get Used');

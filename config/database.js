@@ -1,3 +1,4 @@
 module.exports={
-   database:"mongodb://localhost:27017/Tasknode"
+   database:"mongodb://localhost:27017/Tasknode",
+   secret:"hema"
 }
