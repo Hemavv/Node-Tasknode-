@@ -28,6 +28,3 @@ const MethodSchema=mongoose.Schema({
     },
 });
 const Method=module.exports=mongoose.model("Method",MethodSchema);
-module.exports.getUserById = (id, callback) => {
-    User.findById(id, callback);
-}
